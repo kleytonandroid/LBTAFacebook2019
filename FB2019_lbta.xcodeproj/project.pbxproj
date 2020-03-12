@@ -15,6 +15,7 @@
 		42C864A924129CA700AFDB8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42C864A724129CA700AFDB8A /* LaunchScreen.storyboard */; };
 		42C864B124129D0200AFDB8A /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C864B024129D0200AFDB8A /* MainController.swift */; };
 		42C864B42412A03900AFDB8A /* LBTATools in Frameworks */ = {isa = PBXBuildFile; productRef = 42C864B32412A03900AFDB8A /* LBTATools */; };
+		42C864B62412B0F500AFDB8A /* PhotosGridController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C864B52412B0F500AFDB8A /* PhotosGridController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		42C864A824129CA700AFDB8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42C864AA24129CA700AFDB8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42C864B024129D0200AFDB8A /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		42C864B52412B0F500AFDB8A /* PhotosGridController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosGridController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				42C864AA24129CA700AFDB8A /* Info.plist */,
 				42C864A424129CA700AFDB8A /* Preview Content */,
 				42C864B024129D0200AFDB8A /* MainController.swift */,
+				42C864B52412B0F500AFDB8A /* PhotosGridController.swift */,
 			);
 			path = FB2019_lbta;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				42C864B124129D0200AFDB8A /* MainController.swift in Sources */,
 				42C8649D24129CA600AFDB8A /* AppDelegate.swift in Sources */,
 				42C8649F24129CA600AFDB8A /* SceneDelegate.swift in Sources */,
+				42C864B62412B0F500AFDB8A /* PhotosGridController.swift in Sources */,
 				42C864A124129CA600AFDB8A /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
