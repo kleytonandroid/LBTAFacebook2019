@@ -104,9 +104,39 @@ class MainController: LBTAListHeaderController<PostCell, String, StoryHeader>, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavbar()
+        
         collectionView.backgroundColor = .init(white: 0.9, alpha: 1)
         
         self.items = ["hello", "World", "1", "2"]
+    }
+    
+    let fb_logoImageView = UIImageView(image: UIImage.init(named: "fb_logo"), contentMode: .scaleAspectFit)
+    let seachButton = UIButton(title: "Search", titleColor: .black)
+    
+    fileprivate func setupNavbar() {
+
+        let width = view.frame.width - 120 - 16 - 60
+        
+        let titleView = UIView(backgroundColor: .clear)
+        titleView.frame = .init(x: 0, y: 0, width: width, height: 50)
+        
+        titleView.hstack(fb_logoImageView.withWidth(120), UIView(backgroundColor: .clear).withWidth(width), seachButton.withWidth(60))
+        navigationItem.titleView = titleView
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let safeAreaTop = UIApplication.shared.windows.filter{$0.isKeyWindow}.first?.safeAreaInsets.top ?? 0
+        
+        let magicalSafeAreaTop: CGFloat = safeAreaTop +  (navigationController?.navigationBar.frame.height ?? 0 )
+        
+        let offset = scrollView.contentOffset.y + magicalSafeAreaTop
+        
+        let alpha: CGFloat = 1 - (offset / magicalSafeAreaTop)
+        
+        [fb_logoImageView, seachButton].forEach{$0.alpha = alpha}
+        navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0,-offset))
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -132,7 +162,7 @@ struct MainPreview: PreviewProvider {
     struct ContainerView: UIViewControllerRepresentable {
         
         func makeUIViewController(context: UIViewControllerRepresentableContext<MainPreview.ContainerView>) -> UIViewController {
-           return MainController()
+           return UINavigationController(rootViewController: MainController())
         }
         
         func updateUIViewController(_ uiViewController: MainPreview.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<MainPreview.ContainerView>) {
